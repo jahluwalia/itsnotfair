@@ -31,7 +31,7 @@ export interface ParentData {
   name: string;
   x: number;
   y: number;
-  patrolPath?: { x: number; y: number }[];
+  patrolPath?: { x: number; y: number; wait?: number }[];
   patrolSpeed: number;
   detectionRange: number;
   catchPhrase: string;

@@ -2,14 +2,11 @@ import { Scene, Physics } from 'phaser';
 
 export class Player {
   public sprite: Physics.Arcade.Sprite;
-  private scene: Scene;
   private normalSpeed: number = 160;
   private sneakSpeed: number = 60;
   private currentSpeed: number = this.normalSpeed;
-  private isSneaking: boolean = false;
 
   constructor(scene: Scene, x: number, y: number) {
-    this.scene = scene;
     
     // Create sprite
     this.sprite = scene.physics.add.sprite(x, y, 'player');
@@ -23,7 +20,6 @@ export class Player {
   }
 
   move(direction: 'left' | 'right' | 'up' | 'down', sneaking: boolean = false): void {
-    this.isSneaking = sneaking;
     this.currentSpeed = sneaking ? this.sneakSpeed : this.normalSpeed;
     this.sprite.setMaxVelocity(this.currentSpeed);
 
@@ -58,7 +54,6 @@ export class Player {
     this.sprite.setVelocity(0, 0);
     this.sprite.setAlpha(1);
     this.sprite.setScale(1);
-    this.isSneaking = false;
   }
 
   getPosition(): { x: number; y: number } {

@@ -32,12 +32,12 @@ export class MenuScene extends Scene {
     subtitle.setOrigin(0.5);
 
     // Play button
-    const playButton = this.createButton(width / 2, height / 2 + 50, 'PLAY', () => {
+    this.createButton(width / 2, height / 2 + 50, 'PLAY', () => {
       this.scene.start('GameScene');
     });
 
     // How to Play button
-    const howToButton = this.createButton(width / 2, height / 2 + 120, 'HOW TO PLAY', () => {
+    this.createButton(width / 2, height / 2 + 120, 'HOW TO PLAY', () => {
       this.showInstructions();
     });
 

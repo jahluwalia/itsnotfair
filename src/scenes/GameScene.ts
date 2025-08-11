@@ -1,21 +1,33 @@
 import { Scene } from 'phaser';
 import { Player } from '../entities/Player';
+import { Parent } from '../entities/Parent';
 import { LevelData } from '../types/game.types';
 
 export class GameScene extends Scene {
   private player!: Player;
+  private parents: Parent[] = [];
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private walls!: Phaser.Physics.Arcade.StaticGroup;
   private tokens!: Phaser.Physics.Arcade.Group;
   private currentLevel!: LevelData;
   private tokensCollected: number = 0;
   private tokensNeeded: number = 3;
+  private lives: number = 3;
+  private isPlayerCaught: boolean = false;
+  private isPaused: boolean = false;
   
   constructor() {
     super({ key: 'GameScene' });
   }
 
   create(): void {
+    // Reset state
+    this.tokensCollected = 0;
+    this.lives = 3;
+    this.isPlayerCaught = false;
+    this.isPaused = false;
+    this.parents = [];
+    
     // Create test level
     this.currentLevel = this.createTestLevel();
     
@@ -24,6 +36,9 @@ export class GameScene extends Scene {
     
     // Create player
     this.player = new Player(this, this.currentLevel.playerStart.x, this.currentLevel.playerStart.y);
+    
+    // Create parents
+    this.createParents();
     
     // Set up controls
     this.cursors = this.input.keyboard!.createCursorKeys();
@@ -34,9 +49,26 @@ export class GameScene extends Scene {
       console.log('Switch character!');
     });
     
+    // Add pause key
+    this.input.keyboard!.on('keydown-ESC', () => {
+      this.togglePause();
+    });
+    
     // Set up collisions
     this.physics.add.collider(this.player.sprite, this.walls);
     this.physics.add.overlap(this.player.sprite, this.tokens, this.collectToken, undefined, this);
+    
+    // Set up parent collisions
+    this.parents.forEach(parent => {
+      this.physics.add.collider(parent.sprite, this.walls);
+      this.physics.add.overlap(
+        this.player.sprite,
+        parent.sprite,
+        () => this.handleCaught(parent),
+        undefined,
+        this
+      );
+    });
     
     // Create UI
     this.createUI();
@@ -46,6 +78,8 @@ export class GameScene extends Scene {
   }
 
   update(): void {
+    if (this.isPaused || this.isPlayerCaught) return;
+    
     // Handle player movement
     const shift = this.input.keyboard!.addKey('SHIFT');
     const sneaking = shift.isDown;
@@ -61,6 +95,12 @@ export class GameScene extends Scene {
     } else {
       this.player.stop();
     }
+    
+    // Update parents AI
+    const playerPos = this.player.getPosition();
+    this.parents.forEach(parent => {
+      parent.update(playerPos);
+    });
   }
 
   private createWorld(): void {
@@ -125,6 +165,18 @@ export class GameScene extends Scene {
     tokenText.setDepth(100);
     tokenText.setName('tokenText');
     
+    // Lives counter
+    const livesText = this.add.text(20, 55, `Lives: ${'❤️'.repeat(this.lives)}`, {
+      fontSize: '24px',
+      fontFamily: 'Arial',
+      color: '#ffffff',
+      stroke: '#000000',
+      strokeThickness: 4,
+    });
+    livesText.setScrollFactor(0);
+    livesText.setDepth(100);
+    livesText.setName('livesText');
+    
     // Level name
     const levelText = this.add.text(width - 20, 20, this.currentLevel.name, {
       fontSize: '20px',
@@ -136,9 +188,160 @@ export class GameScene extends Scene {
     levelText.setOrigin(1, 0);
     levelText.setScrollFactor(0);
     levelText.setDepth(100);
+    
+    // Pause hint
+    const pauseHint = this.add.text(width / 2, 20, 'ESC to Pause', {
+      fontSize: '16px',
+      fontFamily: 'Arial',
+      color: '#ffffff',
+      stroke: '#000000',
+      strokeThickness: 3,
+    });
+    pauseHint.setOrigin(0.5, 0);
+    pauseHint.setScrollFactor(0);
+    pauseHint.setDepth(100);
+    pauseHint.setAlpha(0.7);
+  }
+  
+  private createParents(): void {
+    // Clear existing parents
+    this.parents.forEach(p => p.destroy());
+    this.parents = [];
+    
+    // Create parents from level data
+    this.currentLevel.parents.forEach(parentData => {
+      const parent = new Parent(
+        this,
+        parentData.x,
+        parentData.y,
+        parentData.patrolPath || [{ x: parentData.x, y: parentData.y }],
+        parentData.catchPhrase
+      );
+      this.parents.push(parent);
+    });
+  }
+  
+  private handleCaught(parent: Parent): void {
+    if (this.isPlayerCaught || parent.getState() !== 'CHASE') return;
+    
+    this.isPlayerCaught = true;
+    this.player.stop();
+    
+    // Show catch phrase
+    this.showMessage(parent.getCatchPhrase(), 2000);
+    
+    // Lose a life
+    this.lives--;
+    this.updateLivesDisplay();
+    
+    // Check game over
+    if (this.lives <= 0) {
+      this.gameOver();
+    } else {
+      // Reset positions after delay
+      this.time.delayedCall(2000, () => {
+        this.resetAfterCaught();
+      });
+    }
+  }
+  
+  private resetAfterCaught(): void {
+    this.isPlayerCaught = false;
+    
+    // Reset player position
+    this.player.setPosition(
+      this.currentLevel.playerStart.x,
+      this.currentLevel.playerStart.y
+    );
+    
+    // Reset parents
+    this.parents.forEach(parent => parent.reset());
+    
+    // Show encouragement
+    const encouragements = [
+      'Try again! You got this!',
+      'So close! Be sneakier!',
+      'Parents have super hearing!',
+      'Try using Shift to sneak!',
+    ];
+    const randomMsg = encouragements[Math.floor(Math.random() * encouragements.length)];
+    this.showMessage(randomMsg, 2000);
+  }
+  
+  private updateLivesDisplay(): void {
+    const livesText = this.children.getByName('livesText') as Phaser.GameObjects.Text;
+    if (livesText) {
+      livesText.setText(`Lives: ${'❤️'.repeat(Math.max(0, this.lives))}`);
+      
+      // Flash effect
+      this.tweens.add({
+        targets: livesText,
+        scaleX: 1.5,
+        scaleY: 1.5,
+        duration: 200,
+        yoyo: true,
+        ease: 'Power2',
+      });
+    }
+  }
+  
+  private togglePause(): void {
+    this.isPaused = !this.isPaused;
+    
+    if (this.isPaused) {
+      // Show pause menu
+      const { width, height } = this.cameras.main;
+      
+      const overlay = this.add.rectangle(width / 2, height / 2, width, height, 0x000000, 0.7);
+      overlay.setScrollFactor(0);
+      overlay.setDepth(300);
+      overlay.setName('pauseOverlay');
+      
+      const pauseText = this.add.text(width / 2, height / 2 - 50, 'PAUSED', {
+        fontSize: '48px',
+        fontFamily: 'Arial Black',
+        color: '#ffffff',
+        stroke: '#000000',
+        strokeThickness: 6,
+      });
+      pauseText.setOrigin(0.5);
+      pauseText.setScrollFactor(0);
+      pauseText.setDepth(301);
+      pauseText.setName('pauseText');
+      
+      const resumeText = this.add.text(width / 2, height / 2 + 20, 'Press ESC to Resume', {
+        fontSize: '24px',
+        fontFamily: 'Arial',
+        color: '#ffffff',
+      });
+      resumeText.setOrigin(0.5);
+      resumeText.setScrollFactor(0);
+      resumeText.setDepth(301);
+      resumeText.setName('resumeText');
+      
+      // Stop all movement
+      this.player.stop();
+      this.parents.forEach(parent => parent.sprite.setVelocity(0, 0));
+    } else {
+      // Remove pause menu
+      ['pauseOverlay', 'pauseText', 'resumeText'].forEach(name => {
+        const obj = this.children.getByName(name);
+        if (obj) obj.destroy();
+      });
+    }
+  }
+  
+  private gameOver(): void {
+    this.isPlayerCaught = true;
+    this.showMessage(this.currentLevel.dialogues.failure, 3000);
+    
+    // Return to menu after delay
+    this.time.delayedCall(3000, () => {
+      this.scene.start('MenuScene');
+    });
   }
 
-  private collectToken(player: any, token: any): void {
+  private collectToken(_player: any, token: any): void {
     const value = token.getData('value') || 1;
     this.tokensCollected += value;
     
@@ -242,7 +445,41 @@ export class GameScene extends Scene {
         { id: 't2', x: 500, y: 250, type: 'main', value: 1 },
         { id: 't3', x: 200, y: 250, type: 'main', value: 1 },
       ],
-      parents: [],
+      parents: [
+        {
+          id: 'mom',
+          name: 'Mom',
+          x: 400,
+          y: 200,
+          patrolPath: [
+            { x: 400, y: 200 },
+            { x: 500, y: 200, wait: 1000 },
+            { x: 500, y: 100 },
+            { x: 300, y: 100, wait: 1000 },
+            { x: 300, y: 200 },
+          ],
+          patrolSpeed: 60,
+          detectionRange: 120,
+          catchPhrase: "Nice try, but I have parent radar!"
+        },
+        {
+          id: 'dad',
+          name: 'Dad',
+          x: 550,
+          y: 280,
+          patrolPath: [
+            { x: 550, y: 280 },
+            { x: 350, y: 280, wait: 2000 },
+            { x: 150, y: 280 },
+            { x: 150, y: 200, wait: 1000 },
+            { x: 350, y: 200 },
+            { x: 550, y: 200 },
+          ],
+          patrolSpeed: 50,
+          detectionRange: 100,
+          catchPhrase: "Bedtime means bedtime, kiddo!"
+        }
+      ],
       unfairnessEvents: [],
       dialogues: {
         start: 'But I\'m not tired! Quick, collect the tokens before bedtime!',
