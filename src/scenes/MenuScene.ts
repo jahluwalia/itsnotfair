@@ -42,7 +42,7 @@ export class MenuScene extends Scene {
     });
 
     // Credits
-    const credits = this.add.text(width / 2, height - 50, 'Made with ❤️ by the family', {
+    const credits = this.add.text(width / 2, height - 50, 'Made with ❤️ by Vismaad & Niroop', {
       fontSize: '18px',
       fontFamily: 'Arial',
       color: '#ffffff',
