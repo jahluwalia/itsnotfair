@@ -25,7 +25,7 @@ Weather app said rain at 4 PM. At 2:15 PM: "Due to unexpected weather patterns, 
 - You JUST got outside
 - Parents are napping (but somehow know you're outside)
 - Ball went over fence on first kick
-- Niroop gets to stay at friend's house during rain
+- Vismaad gets to stay at friend's house during rain
 
 **How It's Delivered:** 
 Dad opens window: "Weather's changing! Inside in 2 minutes!"
@@ -67,10 +67,10 @@ Backyard Map:
 - Neighbor's dog: Friendly but LOUD
 - Sprinklers: Turn on randomly (dad's "smart" system)
 - Garden gnomes: Mom's motion-sensor gnomes with cameras
-- Fence: Too tall for Vismaad alone
+- Fence: Too tall for Niroop alone
 
 **Helpers:**
-- Niroop: Can boost Vismaad over fence
+- Vismaad: Can boost Niroop over fence
 - Dog: Can be distracted with treats
 
 ## Win/Lose Conditions
@@ -112,7 +112,7 @@ Get ball but no tokens = "At least I got my ball..."
 
 **Animation ideas:**
 - Slow-motion ball kick that immediately goes over
-- Niroop's "I told you so" face
+- Vismaad's "I told you so" face
 - Dad fake sleeping with comic book on face
 
 ## Difficulty Settings

@@ -24,7 +24,7 @@ Mall - toy store, clothing store, food court, parking lot
 **Why It's Unfair:**
 - Parents buy their stuff but not yours
 - "Quick trip" is 3 hours
-- Niroop gets new clothes, you get "you'll grow into it"
+- Vismaad gets new clothes, you get "you'll grow into it"
 - Promised toy store visit gets cancelled
 
 **How It's Delivered:** 
@@ -66,7 +66,7 @@ Mall Map:
 - Other shoppers (block paths)
 - Security guard (suspicious of kids alone)
 - Store clerks ("Can I help you?" = detection)
-- Niroop: In fitting room forever
+- Vismaad: In fitting room forever
 
 **Helpers:**
 - Crowds to blend into
@@ -101,7 +101,7 @@ Caught 3 times = "No mall trips for a month!"
 ## Comedy Elements
 **Visual gags:**
 - Parents' cart gets comically full
-- Vismaad hides among mannequins
+- Niroop hides among mannequins
 - Dad gets lost, asks mall map for help
 - Mom's "quick trip" timer shows 3+ hours
 
@@ -111,8 +111,8 @@ Caught 3 times = "No mall trips for a month!"
 - Intercom: "Parents, please control your children"
 
 **Animation ideas:**
-- Vismaad does mannequin challenge
-- Niroop emerges from fitting room with 50 items
+- Niroop does mannequin challenge
+- Vismaad emerges from fitting room with 50 items
 - Parents' hypocritical purchases float above cart
 
 ## Difficulty Settings
@@ -129,7 +129,7 @@ Caught 3 times = "No mall trips for a month!"
 **Unfair Mode:** 
 - Parents have eyes in back of head
 - Every store employee is watching
-- Niroop actively points you out
+- Vismaad actively points you out
 - Cart has squeaky wheel
 - "Lost child" announcement when you're alone
 

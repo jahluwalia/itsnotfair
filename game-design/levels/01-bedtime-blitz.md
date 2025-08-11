@@ -5,7 +5,7 @@
 Collect "5 More Minutes" tokens to finish the boss battle in your game before mandatory bedtime
 
 **Time of Day:** 
-8:00 PM (Vismaad's bedtime), 9:00 PM (Niroop's bedtime)
+8:00 PM (Niroop's bedtime), 9:00 PM (Vismaad's bedtime)
 
 **Location:** 
 Upstairs hallway, kids' bedrooms, parent's room, bathroom
@@ -22,7 +22,7 @@ Upstairs hallway, kids' bedrooms, parent's room, bathroom
 Halfway through the level, Mom announces: "Actually, bedtime is now 7:45 because of daylight savings!" Timer drops by 15 minutes instantly.
 
 **Why It's Unfair:**
-- Niroop gets an extra hour but "she's older"
+- Vismaad gets an extra hour but "she's older"
 - No warning about the time change
 - You were just about to beat the boss!
 
@@ -38,7 +38,7 @@ Upstairs Hallway Map:
 █             ████████████ █  
 █      T                 T █  T=Token
 █ ████████    ████████    █  
-█ Niroop Rm   Vismaad Rm  █  
+█ Vismaad Rm  Niroop Rm   █  
 █ ████████    ████████    █  
 █                         █
 █         Stairs          █
@@ -58,11 +58,11 @@ Upstairs Hallway Map:
 
 **Obstacles:**
 - Creaky floorboard near parent's room (alerts them)
-- Niroop: Might tattle if she sees you (unless bribed with tokens)
+- Vismaad: Might tattle if she sees you (unless bribed with tokens)
 - Night light in hallway (creates visible zone)
 
 **Helpers:**
-- Niroop: Can create distraction by asking for water (once per level)
+- Vismaad: Can create distraction by asking for water (once per level)
 
 ## Win/Lose Conditions
 **Success:** 
@@ -86,13 +86,13 @@ Caught 3 times = "Straight to bed, no story, no tablet tomorrow!"
 "YES! Boss defeated and still got story time!"
 
 **Failure message:**
-"No fair! Niroop's still awake..."
+"No fair! Vismaad's still awake..."
 
 ## Comedy Elements
 **Visual gags:**
 - Kids' exaggerated tiptoe animation
 - Parents teleport like horror movie villains
-- Niroop peeks out of room with popcorn
+- Vismaad peeks out of room with popcorn
 
 **Sound effects:**
 - Floorboard: "CREEEEEEAK" in giant text
@@ -100,7 +100,7 @@ Caught 3 times = "Straight to bed, no story, no tablet tomorrow!"
 - Victory fanfare is 8-bit game music
 
 **Animation ideas:**
-- Vismaad Naruto-runs back to room
+- Niroop Naruto-runs back to room
 - Mom's hair gets frizzier each time she's alerted
 - Dad pretends to sleep but one eye is open
 
@@ -119,7 +119,7 @@ Caught 3 times = "Straight to bed, no story, no tablet tomorrow!"
 - Parents have super hearing
 - 1 chance only
 - Bedtime moves earlier every 30 seconds
-- Niroop actively tattles
+- Vismaad actively tattles
 
 ## Kids' Ideas Section
 ### Niroop's Ideas:

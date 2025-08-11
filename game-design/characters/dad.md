@@ -7,7 +7,7 @@
 
 ## Appearance
 **Description:**
-Cargo shorts in all weather. Band t-shirt from a concert 20 years ago. Slightly messy hair. Dad sneakers (white New Balance). Always has a mug of coffee, even at 9 PM.
+Cargo shorts in all weather. Band t-shirt from a concert 20 years ago. Slightly messy hair. Dad sneakers (white New Balance). Always has a cold brew coffee, even at 9 PM.
 
 **Size:** Large
 **Color Scheme:** Green/khaki shorts, band t-shirt (black), white sneakers
@@ -76,12 +76,12 @@ Cargo shorts in all weather. Band t-shirt from a concert 20 years ago. Slightly 
 Dad is "resting his eyes" on the couch. Kids try to sneak past to get snacks. The moment they grab cookies, Dad (still with eyes closed): "I don't think so!" Instantly teleports to kitchen.
 
 ## Kids' Design Notes
-### Vismaad's Ideas:
+### Niroop's Ideas:
 **Drawing:** Dad with tool belt but all tools are TV remotes
 **Personality ideas:** "Pretends to be asleep but sees everything"
 **Funny things they should do:** Air guitar when he catches you
 
-### Niroop's Ideas:
+### Vismaad's Ideas:
 **Drawing:** Dad juggling coffee, phone, and TV remote
 **Personality ideas:** "Makes jokes when we get in trouble"
 **Funny things they should do:** Victory dance that's really embarrassing
@@ -93,4 +93,4 @@ Dad is "resting his eyes" on the couch. Kids try to sneak past to get snacks. Th
 - Needs "fake sleep" state
 - Slower movement but wider patrol area
 - Special "turbo dad" mode when thermostat is touched
-- Coffee mug is separate sprite (can be thrown as projectile detection)
+- Coffee glass is separate sprite (can be thrown as projectile detection)

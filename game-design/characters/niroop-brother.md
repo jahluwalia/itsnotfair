@@ -1,7 +1,7 @@
-# Character Design: Vismaad (Little Brother)
+# Character Design: Niroop (Little Brother)
 
 ## Basic Info
-**Name:** Vismaad
+**Name:** Niroop
 **Age:** 7
 **Role:** Playable Kid (Main Character)
 
@@ -17,7 +17,7 @@ Energetic 7-year-old with messy hair that won't stay combed. Wearing dinosaur or
 
 **Catchphrase:**
 - "But WHY?"
-- "Niroop did it!"
+- "Vismaad did it!"
 - "I'm not tired!"
 - "That's not what you said yesterday!"
 - "Can I have a snack?"
@@ -74,15 +74,15 @@ Energetic 7-year-old with messy hair that won't stay combed. Wearing dinosaur or
 - Sister gets to boss him around
 
 **Typical unfair scenario:**
-Vismaad has been good all day. Sister was grumpy. Bedtime comes: "Niroop, you can read for 20 more minutes. Vismaad, bed now." "But I was good!" "You need more sleep, you're younger."
+Niroop has been good all day. Sister was grumpy. Bedtime comes: "Vismaad, you can read for 20 more minutes. Niroop, bed now." "But I was good!" "You need more sleep, you're younger."
 
 ## Kids' Design Notes
-### Vismaad's Ideas (self):
+### Niroop's Ideas (self):
 **Drawing:** "Give me a cape! And laser eyes!"
 **Personality ideas:** "I'm super fast and really smart"
 **Funny things they should do:** Superhero landing pose
 
-### Niroop's Ideas:
+### Vismaad's Ideas:
 **Drawing:** Brother covered in dirt and holding 10 snacks
 **Personality ideas:** "He's annoying but funny"
 **Funny things they should do:** Trips over his own feet sometimes

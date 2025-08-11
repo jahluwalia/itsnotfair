@@ -77,7 +77,7 @@ Hotel Map (Multi-Floor):
 - Elevators take forever
 - Other guests complain about noise
 - Ice machine is loudest thing ever
-- Niroop: Has teenager privileges suddenly
+- Vismaad: Has teenager privileges suddenly
 
 **Helpers:**
 - Room service cart to hide in
@@ -143,7 +143,7 @@ Caught 3 times = "Straight to room, no pool tomorrow!"
 - EVERYTHING is against you
 - Parents have GPS trackers
 - Hotel is actively sabotaging fun
-- Niroop joined the parents' side
+- Vismaad joined the parents' side
 - Token locations change randomly
 - "Fire drill" resets everything
 

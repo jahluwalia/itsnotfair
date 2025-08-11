@@ -24,7 +24,7 @@ Professional but casual - business casual clothes even at home. Hair in a practi
 **Quirks:**
 - Can somehow hear candy wrappers from three rooms away
 - Appears instantly when someone opens the snack cabinet
-- Uses full names when serious: "Vismaad Singh! Niroop Kaur!"
+- Uses full names when serious: "Niroop Singh! Vismaad Kaur!"
 - Schedules fun ("We'll have spontaneous fun from 3-4 PM")
 
 ## Gameplay Abilities
@@ -73,12 +73,12 @@ Professional but casual - business casual clothes even at home. Hair in a practi
 Kids are about to win the level, Mom gets work call, suddenly declares "Early bedtime tonight, important meeting tomorrow!" Timer suddenly decreases by 2 minutes.
 
 ## Kids' Design Notes
-### Vismaad's Ideas:
+### Niroop's Ideas:
 **Drawing:** Mom with superhero cape made of yoga mat
 **Personality ideas:** "She always knows but pretends not to know"
 **Funny things they should do:** Check invisible watch when kids ask for 5 more minutes
 
-### Niroop's Ideas:
+### Vismaad's Ideas:
 **Drawing:** Mom juggling phone, coffee, laptop, and laundry
 **Personality ideas:** "She can teleport to wherever we're being sneaky"
 **Funny things they should do:** Hair gets frizzier as she gets more suspicious

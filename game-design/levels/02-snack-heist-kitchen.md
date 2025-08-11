@@ -19,7 +19,7 @@ Kitchen, pantry, living room (Dad watching TV)
 - [x] Comparison (sibling gets different treatment)
 
 **What Happens:**
-When you open the fridge, Mom texts: "New rule: No snacks after 4 PM! Dinner is early today!" Also, Niroop already had cookies but "she had a hard day at school."
+When you open the fridge, Mom texts: "New rule: No snacks after 4 PM! Dinner is early today!" Also, Vismaad already had cookies but "she had a hard day at school."
 
 **Why It's Unfair:**
 - Rule changed AFTER you started
@@ -63,7 +63,7 @@ Kitchen & Living Room Map:
 - Smart fridge: Announces when opened "DOOR OPEN!"
 - Alexa: "I heard someone in the kitchen!"
 - Squeaky pantry door
-- Niroop: Eating HER snacks, might trade for tokens
+- Vismaad: Eating HER snacks, might trade for tokens
 
 **Helpers:**
 - Can trigger Alexa to play music (covers noise)

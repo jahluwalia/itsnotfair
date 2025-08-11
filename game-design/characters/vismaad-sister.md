@@ -1,7 +1,7 @@
-# Character Design: Niroop (Big Sister)
+# Character Design: Vismaad (Big Sister)
 
 ## Basic Info
-**Name:** Niroop
+**Name:** Vismaad
 **Age:** 10
 **Role:** Playable Kid (Main Character)
 
@@ -71,15 +71,15 @@ Confident 10-year-old with long dark hair in a ponytail or braid. Wearing comfor
 - Parents use her tablet for "important things"
 
 **Typical unfair scenario:**
-Niroop negotiated for 30 more minutes of screen time yesterday. Today, Mom says "That was yesterday's agreement. Today is different." No explanation why.
+Vismaad negotiated for 30 more minutes of screen time yesterday. Today, Mom says "That was yesterday's agreement. Today is different." No explanation why.
 
 ## Kids' Design Notes
-### Niroop's Ideas (self):
+### Vismaad's Ideas (self):
 **Drawing:** "Make me look cool, not like a baby"
 **Personality ideas:** "I'm smart and I always have backup plans"
 **Funny things they should do:** Victory dance, eye roll animation
 
-### Vismaad's Ideas:
+### Niroop's Ideas:
 **Drawing:** Sister with books floating around her
 **Personality ideas:** "She thinks she's the boss of me"
 **Funny things they should do:** Fixes her hair while running
